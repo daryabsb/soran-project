@@ -9,7 +9,14 @@ module.exports = {
     "./app.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        hscroll: "fadeIn 3s linear infinite",
+      },
+      fontFamily: {
+        montserrat: ["Montserrat"],
+      },
+    },
   },
   plugins: [],
 };
