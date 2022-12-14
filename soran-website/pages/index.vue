@@ -1,6 +1,6 @@
 <template>
 
-    <div class="h-screen w-full mx:auto overflow-scroll scroll-smooth snap-y snap-mandatory  bg-white transition-all">
+    <div class="h-screen w-full mx:auto overflow-auto scroll-smooth snap-y snap-mandatory  bg-white transition-all">
         <!-- <GradientUnit /> -->
         <MainHeader />
 

@@ -1,6 +1,6 @@
 <!-- This example requires Tailwind CSS v3.0+ -->
 <template>
-    <main class=" snap-start shrink-0">
+    <main class=" snap-start shrink-0 scroll-smooth">
         <div class="relative  h-screen px-6 lg:px-8">
             <div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
                 <div>
