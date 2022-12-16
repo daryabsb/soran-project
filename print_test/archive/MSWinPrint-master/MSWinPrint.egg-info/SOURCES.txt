@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+MSWinPrint.py
+README
+setup.py
+MSWinPrint.egg-info/PKG-INFO
+MSWinPrint.egg-info/SOURCES.txt
+MSWinPrint.egg-info/dependency_links.txt
+MSWinPrint.egg-info/top_level.txt
