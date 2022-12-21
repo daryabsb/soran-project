@@ -1,6 +1,12 @@
-Genshi==0.7.5
-lxml==4.6.3
-Pillow==9.3
+colorama==0.4.6
+Genshi==0.7.7
+lxml==4.9.2
+MSWinPrint==1.1
+pi==0.1.2
+Pillow==9.3.0
+pyserial==3.5
+pywin32==305
 qrcode==7.3.1
-relatorio==0.9.2
+relatorio==0.10.1
+reportlab==3.6.12
 six==1.16.0
