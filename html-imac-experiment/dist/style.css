@@ -1,0 +1,41 @@
+body,
+.wrap {
+  font-size: 16px;
+}
+.imac {
+  background: #cccccc;
+  background: linear-gradient(to right, #cccccc 0%, #eeeeee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#eeeeee', GradientType=1);
+  border-radius: 0.8em;
+  color: #000;
+  height: 20.7em;
+  margin: 0 auto 4.3em auto;
+  perspective: 3em;
+  position: relative;
+  text-align: center;
+  width: 30em;
+}
+.imac::after {
+  background: #808080;
+  background: linear-gradient(to bottom, #808080 0%, #fafafa 54%, #fafafa 56%, #777777 73%, #777777 75%, #aaaaaa 85%, #999999 95%, #999999 99%, #dddddd 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#808080', endColorstr='#dddddd', GradientType=0);
+  border-bottom: 0.1em solid #dddddd;
+  border-bottom-right-radius: 1.5em 0.1em;
+  border-bottom-left-radius: 1.5em 0.1em;
+  bottom: -2.3em;
+  content: "";
+  height: 1em;
+  left: 50%;
+  margin-left: -3.7em;
+  position: absolute;
+  transform: rotateX(65deg);
+  width: 7.5em;
+}
+.imac img {
+  border: 1.2em solid #000;
+  border-radius: 0.8em 0.8em 0 0;
+  margin-bottom: 0.4em;
+}
+.imac .icon {
+  font-size: 1.5em;
+}

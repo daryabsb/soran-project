@@ -1,0 +1,56 @@
+@mac-gradient-start: #cccccc;
+@mac-gradient-end: #eeeeee;
+
+@mac-foot-gradient-stop1: #808080;
+@mac-foot-gradient-stop2: #fafafa;
+@mac-foot-gradient-stop3: #777777;
+@mac-foot-gradient-stop4: #aaaaaa;
+@mac-foot-gradient-stop5: #999999;
+@mac-foot-gradient-stop6: #dddddd;
+
+body,
+.wrap {
+  font-size: 16px;
+}
+.imac {
+  background: @mac-gradient-start;
+  background: -moz-linear-gradient(left, @mac-gradient-start 0%, @mac-gradient-end 100%);
+  background: -webkit-linear-gradient(left, @mac-gradient-start 0%, @mac-gradient-end 100%);
+  background: linear-gradient(to right, @mac-gradient-start 0%, @mac-gradient-end 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{mac-gradient-start}', endColorstr='@{mac-gradient-end}',GradientType=1 );
+  border-radius: 0.8em;
+  color: #000;
+  height: 20.7em;
+  margin: 0 auto 4.3em auto;
+  perspective: 3em;
+  position: relative;
+  text-align: center;
+  width: 30em;
+  
+  &::after {
+    background: @mac-foot-gradient-stop1;
+    background: -moz-linear-gradient(top, @mac-foot-gradient-stop1 0%, @mac-foot-gradient-stop2 54%, @mac-foot-gradient-stop2 56%, @mac-foot-gradient-stop3 73%, @mac-foot-gradient-stop3 75%, @mac-foot-gradient-stop4 85%, @mac-foot-gradient-stop5 95%,  @mac-foot-gradient-stop5 99%,  @mac-foot-gradient-stop6 99%);
+    background: -webkit-linear-gradient(top, @mac-foot-gradient-stop1 0%, @mac-foot-gradient-stop2 54%,@mac-foot-gradient-stop2 56%, @mac-foot-gradient-stop3 73%, @mac-foot-gradient-stop3 75%, @mac-foot-gradient-stop4 85%, @mac-foot-gradient-stop5 95%, @mac-foot-gradient-stop5 99%, @mac-foot-gradient-stop6 99%);
+    background: linear-gradient(to bottom,  @mac-foot-gradient-stop1 0%, @mac-foot-gradient-stop2 54%, @mac-foot-gradient-stop2 56%, @mac-foot-gradient-stop3 73%, @mac-foot-gradient-stop3 75%, @mac-foot-gradient-stop4 85%, @mac-foot-gradient-stop5 95%, @mac-foot-gradient-stop5 99%, @mac-foot-gradient-stop6 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{mac-foot-gradient-stop1}', endColorstr='@{mac-foot-gradient-stop6}',GradientType=0 );
+    border-bottom: 0.1em solid @mac-foot-gradient-stop6;
+    border-bottom-right-radius: 1.5em 0.1em;
+    border-bottom-left-radius: 1.5em 0.1em;
+    bottom: -2.3em;
+    content: "";
+    height: 1em;
+    left: 50%;
+    margin-left: -3.7em;
+    position: absolute;
+    transform: rotateX(65deg);
+    width: 7.5em;
+  }
+  img {
+    border: 1.2em solid #000;
+    border-radius: 0.8em 0.8em 0 0;
+    margin-bottom: 0.4em;
+  }
+  .icon {
+    font-size: 1.5em;
+  }
+}
