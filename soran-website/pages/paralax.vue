@@ -6,6 +6,12 @@
         </div>
         <div class="container absolute">
             <!-- h-screen flex flex-col justify-center items-center flex-nowrap text-white font-montserrat uppercase  will-change-transform -->
+            <section id="section-1" class="background h-screen">
+                <div class="content-wrapper">
+                    <p class="content-title">Where communication & results intersect</p>
+                    <p class="content-subtitle">Explore features >>></p>
+                </div>
+            </section>
             <section id="section-1" class="background">
                 <div class="content-wrapper">
                     <p class="content-title">Where communication & results intersect</p>

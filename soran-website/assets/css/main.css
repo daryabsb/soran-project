@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-item {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 8px 0px;
+  text-decoration: none;
+  color: #ae0d00;
+}
+.nav-item:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.nav-item:before,
+.nav-item:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  background: #fff;
+}
+.nav-item:before {
+  left: 0;
+}
+.nav-item:after {
+  right: 0;
+  background: #ae0d00;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.nav-item:hover:before {
+  background: #fff;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.nav-item:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
