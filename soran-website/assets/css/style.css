@@ -5,8 +5,16 @@ body {
   overflow: hidden;
 }
 
+@media screen {
+  .background {
+    display: block;
+  }
+}
+
 .background {
   background-size: cover;
+  background-color: white;
+  /* display: none; */
   background-repeat: no-repeat;
   background-position: center center;
   overflow: hidden;
@@ -29,12 +37,12 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: rgba(0, 0, 0, 0.3); */
 }
 
 .background:first-child {
   /* background-image: url(/img/section-img-01.jpg); */
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   transform: translateY(-15vh);
 }
 
@@ -43,17 +51,18 @@ body {
 }
 
 .background:nth-child(2) {
-  background-image: url(/img/section-img-01.jpg);
+  /* background-image: url(/img/section-img-01.jpg); */
+}
+
+.background:nth-child(4) {
+  /* background-image: url(/img/section-img-03.jpg); */
 }
 
 .background:nth-child(3) {
-  background-image: url(/img/section-img-02.jpg);
-}
-.background:nth-child(4) {
-  background-image: url(/img/section-img-03.jpg);
+  /* background-image: url(/img/section-img-02.jpg); */
 }
 .background:nth-child(5) {
-  background-image: url(/img/section-img-04.jpg);
+  /* background-image: url(/img/section-img-04.jpg); */
 }
 
 /* Set stacking context of slides */
@@ -81,7 +90,7 @@ body {
   justify-content: center;
   text-align: center;
   flex-flow: column nowrap;
-  color: #fff;
+  /* color: #fff; */
   font-family: Montserrat;
   text-transform: uppercase;
   transform: translateY(40vh);
@@ -92,7 +101,7 @@ body {
 }
 
 .content-title {
-  font-size: 12vh;
+  /* font-size: 12vh; */
   line-height: 1.4;
 }
 
