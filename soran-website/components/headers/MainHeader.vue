@@ -22,7 +22,8 @@
                     :class="[active == item.id
                     ? 'bg-white text-zinc-900'
                     : 'bg-transparent ',
-                    'transition-all nav-link h-full flex justify-center items-center w-32 bg-opacity-75 hover:bg-blood']" @click="$emit('updateNav', item.id)">
+                    'transition-all nav-link h-full flex justify-center items-center w-32 bg-opacity-75 hover:bg-zinc-300 ']"
+                    @click="$emit('updateNav', item.id)">
                     <a :href="item.href" class="nav-item mx-auto font-semibold leading-7  text-blood">{{
                         item.name
                     }}</a>
