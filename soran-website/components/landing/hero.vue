@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <slide>
         <div class="relative px-6 lg:px-8">
             <div class="mx-auto max-w-3xl xl:max-w-6xl pt-20 pb-32 sm:pt-48 sm:pb-40">
                 <div>
@@ -63,5 +63,10 @@
                 </defs>
             </svg>
         </div>
-    </div>
+    </slide>
 </template>
+
+<script setup>
+import slide from '~/components/Paralax/slide.vue';
+
+</script>

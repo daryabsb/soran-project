@@ -54,15 +54,15 @@
                 <div class="mt-6 flow-root">
                     <div class="-my-6 divide-y divide-gray-500/10">
                         <div class="space-y-2 py-6">
-                            <!-- <slot /> -->
-
-                            <a v-for="item in navigation" :key="item.id" :href="item.href"
-                                :class="[active == item.id ? 'bg-pink-700' : 'bg-transparent', '-mx-3 block  rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10']"
-                                @click="$emit('updateNav', item.id), mobileMenuOpen = false">{{
-    item.name
-                                }}</a>
+                            <a v-for="item in navigation" :key="item.name" :href="item.id"
+                                class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
+                                @click="$emit('updateNav', item.id), mobileMenuOpen = false">{{ item.name }}</a>
                         </div>
-
+                        <div class="py-6">
+                            <a href="#"
+                                class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10">Log
+                                in</a>
+                        </div>
                     </div>
                 </div>
             </DialogPanel>
@@ -70,15 +70,15 @@
     </div>
 
 </template>
+                                <!-- >{{ -->
   
 <script setup>
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 defineProps({
     active: { type: Number, default: 1 }
 })
-const emit = defineEmits(['updateNav'])
 const navigation = [
     { id: 1, name: 'Home', href: '#section-1' },
     { id: 2, name: 'Features', href: '#section-2' },

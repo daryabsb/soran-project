@@ -6,10 +6,9 @@
     </div>
 </template>
 <script setup>
-import { ref, computed, watch, onMounted, provide } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 
 
-// const emitNavigate = defineEmits(["navigate"]);
 const ticking = ref(false);
 const currentSection = ref(1);
 const isFirefox = ref(

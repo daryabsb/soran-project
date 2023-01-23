@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left z-10">
+    <slide>
+        <div class="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left z-50">
             <div class="px-6 sm:px-8 lg:w-1/2 xl:pr-16">
                 <h1
                     class="text-4xl font-montserrat font-normal tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
@@ -32,5 +32,10 @@
                 src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
                 alt="" />
         </div>
-    </div>
+    </slide>
 </template>
+
+<script setup>
+import slide from '~/components/Paralax/slide.vue';
+
+</script>

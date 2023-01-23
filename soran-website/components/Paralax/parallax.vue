@@ -1,15 +1,19 @@
 <template>
-    <div class="container relative">
+    <div class="relative">
+        <div class="fixed   z-50 w-full">
+            <slot name="nav" :navigate="navigate" :currentSlideNumber="currentSlideNumber" />
+        </div>
+        <div class="container absolute">
 
-        <slot :navigate="navigate" :currentSlideNumber="currentSlideNumber" />
+            <slot name="sections" />
+        </div>
 
     </div>
 </template>
 <script setup>
 import { ref, computed, watch, onMounted } from "vue";
+// import { defineComponent, h } from "vue";
 
-
-// const emitNavigate = defineEmits(["navigate"]);
 const ticking = ref(false);
 const currentSection = ref(1);
 const isFirefox = ref(
@@ -29,6 +33,7 @@ const slideDurationSetting = ref(600);
 const currentSlideNumber = ref(0);
 const slides = ref([]);
 const totalSlideNumber = computed(() => slides.value.length);
+
 function navigate(section) {
     if (section > currentSection.value) {
         while (currentSection.value !== section) {
@@ -76,6 +81,7 @@ function parallaxScroll(evt) {
     } else {
         delta = evt.wheelDelta;
     }
+
     if (ticking.value != true) {
         if (delta <= -scrollSensitivitySetting.value) {
             ticking.value = true;
@@ -115,9 +121,5 @@ watch(
     }
 );
 
-defineExpose({
-    navigate,
-    currentSlideNumber
-})
 
 </script>
