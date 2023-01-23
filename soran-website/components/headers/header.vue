@@ -45,7 +45,7 @@ module.exports = {
                     <Tab as="template" v-for="category in navigation.categories" :key="category.name"
                       v-slot="{ selected }">
                       <button
-                        :class="[selected ? 'text-indigo-600 border-indigo-600' : 'text-gray-900 border-transparent', 'flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium']">{{
+                        :class="[selected ? 'text-blood border-blood' : 'text-gray-900 border-transparent', 'flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium']">{{
                           category.name
                         }}</button>
                     </Tab>
@@ -55,9 +55,9 @@ module.exports = {
                   <TabPanel v-for="category in navigation.categories" :key="category.name" class="space-y-12 px-4 py-6">
                     <div class="grid grid-cols-2 gap-x-4 gap-y-10">
                       <div v-for="item in category.featured" :key="item.name" class="group relative">
-                        <div
-                          class="aspect-w-1 aspect-h-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                          <img :src="item.imageSrc" :alt="item.imageAlt" class="object-cover object-center" />
+                        <div class="h-32 w-full  overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
+                          <img :src="item.imageSrc" :alt="item.imageAlt"
+                            class="h-full w-full object-cover object-center" />
                         </div>
                         <a :href="item.href" class="mt-6 block text-sm font-medium text-gray-900">
                           <span class="absolute inset-0 z-10" aria-hidden="true" />
@@ -76,32 +76,9 @@ module.exports = {
                 </div>
               </div>
 
-              <div class="space-y-6 border-t border-gray-200 py-6 px-4">
-                <div class="flow-root">
-                  <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Create an account</a>
-                </div>
-                <div class="flow-root">
-                  <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
-                </div>
-              </div>
 
               <div class="space-y-6 border-t border-gray-200 py-6 px-4">
-                <!-- Currency selector -->
-                <form>
-                  <div class="inline-block">
-                    <label for="mobile-currency" class="sr-only">Currency</label>
-                    <div
-                      class="group relative -ml-2 rounded-md border-transparent focus-within:ring-2 focus-within:ring-white">
-                      <select id="mobile-currency" name="currency"
-                        class="flex items-center rounded-md border-transparent bg-none py-0.5 pl-2 pr-5 text-sm font-medium text-gray-700 focus:border-transparent focus:outline-none focus:ring-0 group-hover:text-gray-800">
-                        <option v-for="currency in currencies" :key="currency">{{ currency }}</option>
-                      </select>
-                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center">
-                        <ChevronDownIcon class="h-5 w-5 text-gray-500" aria-hidden="true" />
-                      </div>
-                    </div>
-                  </div>
-                </form>
+
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -151,7 +128,7 @@ module.exports = {
                   </a>
                 </div>
 
-                <div class="hidden h-full lg:flex">
+                <div class="hidden h-full lg:flex ">
                   <!-- Flyout menus -->
                   <PopoverGroup class="inset-x-0 bottom-0 px-4">
                     <div class="flex h-full justify-center space-x-8">
@@ -159,7 +136,7 @@ module.exports = {
                         v-slot="{ open }">
                         <div class="relative flex">
                           <PopoverButton
-                            :class="[open ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-700 hover:text-gray-800', 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out']">
+                            :class="[open ? 'border-blood text-blood' : 'border-transparent text-gray-700 hover:text-gray-800', 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out']">
                             {{ category.name }}</PopoverButton>
                         </div>
 
@@ -201,7 +178,7 @@ module.exports = {
                 </div>
 
                 <!-- Mobile menu and search (lg-) -->
-                <div class="flex flex-1 items-center lg:hidden">
+                <div class="flex flex-1 items-center lg:hidden mx-4">
                   <button type="button" class="-ml-2 rounded-md bg-white p-2 text-gray-400" @click="open = true">
                     <span class="sr-only">Open menu</span>
                     <Bars3Icon class="h-6 w-6" aria-hidden="true" />
@@ -217,8 +194,7 @@ module.exports = {
                 <!-- Logo (lg-) -->
                 <a href="#" class="lg:hidden">
                   <span class="sr-only">Your Company</span>
-                  <img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt=""
-                    class="h-8 w-auto" />
+                  <img src="~/assets/img/logo.svg" alt="" class="h-8 w-auto" />
                 </a>
 
                 <div class="flex flex-1 items-center justify-end lg:hidden">
