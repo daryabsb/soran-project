@@ -72,19 +72,21 @@
 </template>
   
 <script setup>
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 defineProps({
     active: { type: Number, default: 1 }
 })
-defineEmits(['updateNav'])
+const emit = defineEmits(['updateNav'])
 const navigation = [
     { id: 1, name: 'Home', href: '#section-1' },
     { id: 2, name: 'Features', href: '#section-2' },
     { id: 3, name: 'Marketplace', href: '#section-3' },
     { id: 4, name: 'Company', href: '#section-4' },
 ]
+
+
 
 const mobileMenuOpen = ref(false)
 

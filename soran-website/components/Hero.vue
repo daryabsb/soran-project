@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v3.0+ -->
 <template>
-    <main class=" snap-start shrink-0 scroll-smooth">
-        <div class="relative  h-screen px-6 lg:px-8">
+    <main class="shrink-0">
+        <div class="relative px-6 lg:px-8">
             <div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
                 <div>
                     <div class="hidden sm:mb-8 sm:flex sm:justify-center">

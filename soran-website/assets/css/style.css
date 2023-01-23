@@ -50,21 +50,6 @@ body {
   transform: translateY(15vh);
 }
 
-.background:nth-child(2) {
-  /* background-image: url(/img/section-img-01.jpg); */
-}
-
-.background:nth-child(4) {
-  /* background-image: url(/img/section-img-03.jpg); */
-}
-
-.background:nth-child(3) {
-  /* background-image: url(/img/section-img-02.jpg); */
-}
-.background:nth-child(5) {
-  /* background-image: url(/img/section-img-04.jpg); */
-}
-
 /* Set stacking context of slides */
 .background:nth-child(1) {
   z-index: 5;
