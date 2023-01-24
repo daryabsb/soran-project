@@ -102,12 +102,70 @@ function parallaxScroll(evt) {
     }
 }
 
+const keyActions = {
+    37: function () { console.log("Left arrow key pressed"); },
+    38: function () { console.log("Up arrow key pressed"); },
+    39: function () { console.log("Right arrow key pressed"); },
+    40: function () { console.log("Down arrow key pressed"); }
+};
+/*
+// Add event listener for arrow key presses
+document.addEventListener("keydown", function (event) {
+    switch (event.keyCode) {
+        case 37:
+            console.log("Left arrow key pressed");
+            break;
+        case 38:
+            console.log("Up arrow key pressed");
+            break;
+        case 39:
+            console.log("Right arrow key pressed");
+            break;
+        case 40:
+            console.log("Down arrow key pressed");
+            break;
+    }
+});
+
+// Add event listener for touch move
+document.addEventListener("touchmove", function (event) {
+    console.log("Touch move event detected: " + event.touches[0].clientX + "," + event.touches[0].clientY);
+});
+
+*/
+
 onMounted(() => {
     slides.value = document.querySelectorAll(".background");
     if (typeof window !== "undefined") {
         var mousewheelEvent = isFirefox.value ? "DOMMouseScroll" : "wheel";
         window.addEventListener(mousewheelEvent, parallaxScroll, false);
     }
+    window.addEventListener("keydown", function (event) {
+        if (keyActions[event.keyCode]) {
+            keyActions[event.keyCode]();
+        }
+    });
+    // window.addEventListener("keydown", function (event) {
+    //     switch (event.keyCode) {
+    //         case 37:
+    //             console.log("Left arrow key pressed");
+    //             break;
+    //         case 38:
+    //             console.log("Up arrow key pressed");
+    //             break;
+    //         case 39:
+    //             console.log("Right arrow key pressed");
+    //             break;
+    //         case 40:
+    //             console.log("Down arrow key pressed");
+    //             break;
+    //     }
+    // });
+
+    // Add event listener for touch move
+    window.addEventListener("touchmove", function (event) {
+        console.log("Touch move event detected: " + event.touches[0].clientX + "," + event.touches[0].clientY);
+    });
 });
 watch(
     () => currentSection.value,
