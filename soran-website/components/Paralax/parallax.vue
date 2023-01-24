@@ -1,19 +1,17 @@
 <template>
     <div class="relative">
-        <div class="fixed   z-50 w-full">
+        <div class="fixed z-50 w-full">
             <slot name="nav" :navigate="navigate" :currentSlideNumber="currentSlideNumber" />
         </div>
         <div class="container absolute">
-
             <slot name="sections" />
         </div>
-
     </div>
 </template>
 <script setup>
-import { ref, computed, watch, onMounted } from "vue";
+import { ref, reactive, computed, watch, onMounted } from "vue";
 // import { defineComponent, h } from "vue";
-
+var touchY = reactive({ value: 0 });
 const ticking = ref(false);
 const currentSection = ref(1);
 const isFirefox = ref(
@@ -74,16 +72,39 @@ function previousItem() {
 }
 function parallaxScroll(evt) {
     var delta;
-    if (isFirefox.value) {
-        delta = evt.detail * -120;
-    } else if (isIe.value) {
-        delta = -evt.deltaY;
-    } else {
-        delta = evt.wheelDelta;
+    switch (evt.type) {
+        case "wheel":
+            if (isFirefox.value) {
+                delta = evt.detail * -120;
+            } else if (isIe.value) {
+                delta = -evt.deltaY;
+            } else {
+                delta = evt.wheelDelta;
+            }
+            break;
+        case "keydown":
+            if (evt.keyCode === 40) {
+                //arrow down
+                delta = -1;
+            } else if (evt.keyCode === 38) {
+                //arrow up
+                delta = 1;
+            }
+            break;
+        case "touchmove":
+            if (evt.touches[0].clientY > touchY.value) {
+                //touchmove down
+                delta = -1;
+                touchY.value = evt.touches[0].clientY;
+            } else if (evt.touches[0].clientY < touchY.value) {
+                //touchmove up
+                delta = 1;
+                touchY.value = evt.touches[0].clientY;
+            }
+            break;
     }
-
     if (ticking.value != true) {
-        if (delta <= -scrollSensitivitySetting.value) {
+        if (delta <= -1) {
             ticking.value = true;
             if (currentSlideNumber.value !== totalSlideNumber.value - 1) {
                 currentSlideNumber.value++;
@@ -91,7 +112,7 @@ function parallaxScroll(evt) {
             }
             slideDurationTimeout(slideDurationSetting.value);
         }
-        if (delta >= scrollSensitivitySetting.value) {
+        if (delta >= 1) {
             ticking.value = true;
             if (currentSlideNumber.value !== 0) {
                 currentSlideNumber.value--;
@@ -102,12 +123,20 @@ function parallaxScroll(evt) {
     }
 }
 
-const keyActions = {
-    37: function () { console.log("Left arrow key pressed"); },
-    38: function () { console.log("Up arrow key pressed"); },
-    39: function () { console.log("Right arrow key pressed"); },
-    40: function () { console.log("Down arrow key pressed"); }
-};
+// const keyActions = {
+//   37: function () {
+//     console.log("Left arrow key pressed");
+//   },
+//   38: function () {
+//     console.log("Up arrow key pressed");
+//   },
+//   39: function () {
+//     console.log("Right arrow key pressed");
+//   },
+//   40: function () {
+//     console.log("Down arrow key pressed");
+//   },
+// };
 /*
 // Add event listener for arrow key presses
 document.addEventListener("keydown", function (event) {
@@ -135,38 +164,28 @@ document.addEventListener("touchmove", function (event) {
 */
 
 onMounted(() => {
+    // Initialize touchY variable
+
     slides.value = document.querySelectorAll(".background");
     if (typeof window !== "undefined") {
         var mousewheelEvent = isFirefox.value ? "DOMMouseScroll" : "wheel";
-        window.addEventListener(mousewheelEvent, parallaxScroll, false);
+        window.addEventListener(
+            mousewheelEvent,
+            function (evt) {
+                parallaxScroll(evt);
+            },
+            false
+        );
     }
     window.addEventListener("keydown", function (event) {
-        if (keyActions[event.keyCode]) {
-            keyActions[event.keyCode]();
-        }
+        parallaxScroll(event);
     });
-    // window.addEventListener("keydown", function (event) {
-    //     switch (event.keyCode) {
-    //         case 37:
-    //             console.log("Left arrow key pressed");
-    //             break;
-    //         case 38:
-    //             console.log("Up arrow key pressed");
-    //             break;
-    //         case 39:
-    //             console.log("Right arrow key pressed");
-    //             break;
-    //         case 40:
-    //             console.log("Down arrow key pressed");
-    //             break;
-    //     }
-    // });
 
-    // Add event listener for touch move
     window.addEventListener("touchmove", function (event) {
-        console.log("Touch move event detected: " + event.touches[0].clientX + "," + event.touches[0].clientY);
+        parallaxScroll(event);
     });
 });
+
 watch(
     () => currentSection.value,
     (newValue) => {
@@ -178,6 +197,4 @@ watch(
         }
     }
 );
-
-
 </script>

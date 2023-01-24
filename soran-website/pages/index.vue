@@ -2,7 +2,8 @@
     <div class="relative ">
         <!-- <GradientUnit /> -->
         <ParalaxParallax>
-            <template v-slot:nav="{ navigate, currentSlideNumber }">
+            <template #nav>
+                <!-- <template v-slot:nav="{ navigate, currentSlideNumber }"> -->
                 <!-- <div class="fixed px-6 lg:px-8 bg-white bg-opacity-70 z-50 w-full"> -->
                 <!-- <MainHeader :active="currentSlideNumber + 1" @updateNav="navigate" /> -->
                 <!-- <HeadersNav :active="currentSlideNumber + 1" @updateNav="navigate" /> -->
