@@ -1,0 +1,80 @@
+body {
+  background-color: lightyellow;
+}
+.parallax-wrap-outer,
+.parallax-wrap-inner,
+.parallax-js,
+.layer,
+.inner {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+.parallax-wrap-outer {
+  background-color: #fff;
+}
+.parallax-wrap-inner {
+  -webkit-transform: rotateY(20deg);
+          transform: rotateY(20deg);
+  -webkit-perspective-origin: 0% 50%;
+          perspective-origin: 0% 50%;
+  -webkit-perspective: 5000px;
+          perspective: 5000px;
+}
+.parallax-js {
+  width: 50%;
+  max-width: 500px;
+  -webkit-perspective-origin: -50% 50%;
+          perspective-origin: -50% 50%;
+  -webkit-perspective: 5000px;
+          perspective: 5000px;
+}
+.layer .inner {
+  height: 0;
+  padding-bottom: 56.52%;
+  -webkit-transform-origin: -30% 0%;
+          transform-origin: -30% 0%;
+}
+.layer:nth-child(1) .inner {
+  -webkit-transform: translateZ(0px) rotateY(30deg);
+          transform: translateZ(0px) rotateY(30deg);
+}
+.layer:nth-child(2) .inner {
+  -webkit-transform: translateZ(-666.66666667px) rotateY(30deg);
+          transform: translateZ(-666.66666667px) rotateY(30deg);
+    -webkit-transform: translateZ(-666.66666667px) rotateX(30deg);
+          transform: translateZ(-666.66666667px) rotateX(30deg);
+}
+.layer:nth-child(3) .inner {
+  -webkit-transform: translateZ(-1333.33333333px) rotateY(30deg);
+          transform: translateZ(-1333.33333333px) rotateY(30deg);
+ 
+}
+.layer:nth-child(4) .inner {
+  -webkit-transform: translateZ(-2000px) rotateY(30deg);
+          transform: translateZ(-2000px) rotateY(30deg);
+}
+.layer:nth-child(5) .inner {
+  -webkit-transform: translateZ(-2666.66666667px) rotateY(30deg);
+          transform: translateZ(-2666.66666667px) rotateY(30deg);
+}
+.layer:nth-child(6) .inner {
+  -webkit-transform: translateZ(-3333.33333333px) rotateY(30deg);
+          transform: translateZ(-3333.33333333px) rotateY(30deg);
+}
+
+.layer:nth-child(7) .inner {
+  -webkit-transform: translateZ(-4333.33333333px) rotateY(30deg);
+          transform: translateZ(-4333.33333333px) rotateY(30deg);
+}
+
+.parallax-wrap-inner {
+  width: 100%;
+  height: 100%;
+  left: 20%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(50%);
+          transform: translateY(-50%) translateX(50%);
+}
