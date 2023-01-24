@@ -16,12 +16,8 @@
     "sass": "^1.43.2"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@fullpage/nuxt-fullpage": "^0.2.3",
     "@heroicons/vue": "^2.0.13",
     "aos": "^2.3.4"
-=======
-    "@heroicons/vue": "^2.0.13"
->>>>>>> f68751b83d22d44afa19926b3aaecf04c0b8b4a5
   }
 }
