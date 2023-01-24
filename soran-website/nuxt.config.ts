@@ -25,5 +25,5 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@fullpage/nuxt-fullpage"],
+  // modules: ["@fullpage/nuxt-fullpage"],
 });
