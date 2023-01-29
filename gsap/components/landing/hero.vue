@@ -22,8 +22,7 @@ module.exports = {
         </div>
         <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50" />
 
-        <!-- Navigation -->
-        <HeadersNav />
+
 
         <div class="relative mx-auto flex max-w-3xl flex-col items-center py-32 px-6 text-center sm:py-64 lg:px-0">
             <h1 class="text-4xl font-bold tracking-tight text-white lg:text-6xl">New arrivals are here</h1>
