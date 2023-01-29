@@ -1,20 +1,19 @@
 <template>
-    <header className="header">
-        <a className="brand" href="https://greensock.com/scrolltrigger" target="_blank" rel="noreferrer">
-            <img className="greensock-icon"
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/scroll-trigger-logo-light.svg" width="200"
-                height="64" alt="ScrollTrigger" />
+    <header class="header bg-white bg-opacity-80">
+        <a class="py-3" href="/" target="_blank" rel="noreferrer">
+            <!-- https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/scroll-trigger-logo-light.svg -->
+            <img class="greensock-icon h-12 text-zinc-900" src="~/assets/img/logo.svg" alt="ScrollTrigger" />
         </a>
         <nav>
-            <ul>
+            <ul class="">
                 <li>
-                    <NuxtLink to="/">Boxes</NuxtLink>
+                    <NuxtLink class="text-red-900" to="/boxes">Boxes</NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/scroll">ScrollTrigger</NuxtLink>
+                    <NuxtLink class="text-red-900" to="/scroll">ScrollTrigger</NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/layers">Layers Section</NuxtLink>
+                    <NuxtLink class="text-red-900" to="/layers">Layers Section</NuxtLink>
                 </li>
             </ul>
         </nav>

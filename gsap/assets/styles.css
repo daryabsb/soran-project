@@ -85,7 +85,7 @@
 
 .panel p,
 .panel li {
-  color: black;
+  /* color: white; */
   font-weight: 400;
   text-align: left;
   font-size: 0.8em;
@@ -533,8 +533,8 @@ header {
   position: fixed;
   top: 0px;
   left: 0px;
-  padding: 6px 10px 10px 10px;
-  border-bottom-right-radius: 26px;
+  /* padding: 6px 10px 10px 10px; */
+  border-bottom-right-radius: 0px;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.5);
   will-change: transform;
@@ -589,7 +589,7 @@ a {
 html,
 body {
   height: auto;
-  background-color: var(--dark);
+  background-color: var(--light);
   color: var(--light);
   font-family: "Signika Negative", sans-serif;
 }
@@ -642,6 +642,7 @@ nav li a:hover {
   height: 100vh;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .section {

@@ -1,0 +1,4 @@
+document.querySelector(".menu-btn").addEventListener "click", ->
+	document.querySelector("body").classList.add "open"
+document.querySelector(".menu-wrapper-close").addEventListener "click", ->
+	document.querySelector("body").classList.remove "open"

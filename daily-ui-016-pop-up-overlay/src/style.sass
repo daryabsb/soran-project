@@ -1,0 +1,170 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway'
+=size($w, $h)
+	width: $w
+	height: $h
+%center
+	position: absolute
+	top: 50%
+	left: 50%
+*
+	outline: none
+body, html
+	margin: 0
+body
+	font-family: 'Raleway', 'Microsoft JhengHei', Arial, sans-serif
+	&::before
+		content: ""
+		background: url("https://images.unsplash.com/photo-1443890923422-7819ed4101c0?q=60") center center fixed no-repeat
+		background-size: cover
+		+size(100%, 100%)
+		position: absolute
+		animation: blur-out .3s forwards
+	.menu
+		background-color: rgba(white, .2)
+		border-radius: 4px
+		+size(300px, 200px)
+		transform: translate(-50%, -50%)
+		transition-duration: .3s
+		transition-delay: 1.2s
+		@extend %center
+		&-btn
+			display: block
+			text-align: center
+			+size(120px, 40px)
+			background-color: rgba(white, .8)
+			font-size: 20px
+			line-height: 40px
+			transform: translate(-50%, -50%)
+			@extend %center
+			transition-duration: .1s
+			cursor: pointer
+			letter-spacing: 1.5px
+			color: #333
+			&::before
+				content: ""
+				+size(100%, 100%)
+				position: absolute
+				border: 1px solid white
+				box-sizing: border-box
+				top: 0
+				left: 0
+				transition-duration: .1s
+			&:hover
+				background-color: white
+				&::before
+					transform: scale(1.2, 1.5)
+		&-wrapper
+			position: fixed
+			+size(100%, 100%)
+			transition-duration: .3s
+			pointer-events: none
+			&::before
+				content: ''
+				+size(50px, 50px)
+				background-color: rgba(white, 0)
+				position: absolute
+				bottom: 0
+				right: 0
+				transform: scale(0)
+				border-radius: 50%
+				transition-duration: .3s
+				transition-delay: .9s
+			&-close
+				+size(60px, 60px)
+				position: absolute
+				background-color: white
+				cursor: pointer
+				right: 0
+				top: 0
+				transform: scale(0)
+				opacity: 0
+				transition-duration: .3s
+				animation: pop-out .3s forwards
+				@keyframes pop-out
+					0%
+						transform: scale(1)
+					50%
+						transform: scale(1.2)
+					100%
+						transform: scale(0)
+				span
+					+size(50px, 2px)
+					top: 50%
+					left: 50%
+					position: absolute
+					transform: translate(-50%, -50%)
+					&::before, &::after
+						content: ""
+						position: absolute
+						+size(50px, 2px)
+						background-color: #777
+					&::before
+						transform: rotate(45deg)
+					&::after
+						transform: rotate(-45deg)
+			ul
+				list-style-type: none
+				padding: 0
+				margin: 0
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				width: 200px
+				li
+					border-bottom: 1px solid
+					padding: 15px
+					letter-spacing: 2px
+					font-size: 30px
+					transform: translateY(30px)
+					color: transparent
+					transition-duration: .3s
+				@for $i from 1 through 5
+					li:nth-of-type(#{$i})
+						transition-delay: .1s * (5-$i) + .3s
+	&.open
+		&::before
+			animation: blur-in .3s forwards
+		.menu
+			opacity: 0
+			transition-delay: 0s
+			&-wrapper
+				pointer-events: all
+				&::before
+					background-color: rgba(white, .5)
+					transform: scale(10)
+					+size(1000px, 1000px)
+					transition-delay: .3s
+					top: 0
+					left: 0
+				&-close
+					opacity: 1
+					animation: pop-in .3s forwards 1.3s
+					@keyframes pop-in
+						0%
+							transform: scale(0)
+						50%
+							transform: scale(1.1)
+						70%
+							transform: scale(.8)
+						100%
+							transform: scale(1)
+				ul
+					li
+						transform: translateY(0)
+						color: #333
+					@for $i from 1 through 5
+						li:nth-of-type(#{$i})
+							transition-delay: .1s * $i + .6s
+								
+@keyframes blur-in
+	0%
+		filter: blur(0px)
+	100%
+		filter: blur(5px)
+
+@keyframes blur-out
+	0%
+		filter: blur(5px)
+	100%
+		filter: blur(0px)

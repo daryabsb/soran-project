@@ -1,27 +1,47 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
 import gsap from 'gsap';
-
-definePageMeta({
-    title: 'Toggle Boxes',
-});
-
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const main = ref();
-const tl = ref();
 const ctx = ref();
+const scrollTween = ref();
 
-const toggleTimeline = () => {
-    tl.value.reversed(!tl.value.reversed());
+const goToSection = (i) => {
+    // Remove the GSAP instance with the specific ID
+    // to prevent memory leak
+    ctx.value.data.forEach((e) => {
+        if (e.vars && e.vars.id === 'scrollTween') {
+            e.kill();
+        }
+    });
+    ctx.value.add(() => {
+        scrollTween.value = gsap.to(window, {
+            scrollTo: { y: i * window.innerHeight, autoKill: false },
+            duration: 1,
+            id: 'scrollTween',
+            onComplete: () => (scrollTween.value = null),
+            overwrite: true,
+        });
+    });
 };
+
 onMounted(() => {
     ctx.value = gsap.context((self) => {
-        const boxes = self.selector('.box');
-        tl.value = gsap
-            .timeline()
-            .to(boxes[0], { x: 120, rotation: 360 })
-            .to(boxes[1], { x: -120, rotation: -360 }, '<')
-            .to(boxes[2], { y: -166 })
-            .reverse();
+        const panels = self.selector('.panel');
+        panels.forEach((panel, i) => {
+            ScrollTrigger.create({
+                trigger: panel,
+                start: 'left right',
+                end: '+=200%',
+                onToggle: (self) =>
+                    self.isActive && !scrollTween.value && goToSection(i),
+            });
+        });
+        ScrollTrigger.create({
+            start: 0,
+            end: 'max',
+            snap: 1 / (panels.length - 1),
+        });
     }, main.value); // <- Scope!
 });
 
@@ -31,15 +51,25 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <main>
-        <section class="boxes-container" ref="main">
-            <h1>Use the button to toggle a Timeline</h1>
+
+
+    <main ref="main">
+        <section class="description panel ">
             <div>
-                <button @click="toggleTimeline">Toggle Timeline</button>
+                <h1>Layered pinning</h1>
+                <p>Use pinning to layer panels on top of each other as you scroll.</p>
+                <div class="scroll-down">
+                    Scroll down
+                    <div class="arrow"></div>
+                </div>
             </div>
-            <div class="box">Box 1</div>
-            <div class="box">Box 2</div>
-            <div class="box">Box 3</div>
         </section>
+        <section class="panel dark">
+            <LandingHero />
+        </section>
+        <section class="panel orange">TWO</section>
+        <section class="panel purple">THREE</section>
+        <section class="panel green">FOUR</section>
     </main>
+
 </template>
