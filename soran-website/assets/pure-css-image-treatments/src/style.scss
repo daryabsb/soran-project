@@ -1,0 +1,234 @@
+// Image effects are provided in the :before of each card. Copy this bit to use the effect.
+// Hover over a card to reveal the original image.
+// HSL values allow you to easily shift hue, saturation, and lightness to create your own color combinations.
+// Substitute your own images to see how they react!
+
+.row {
+  &:nth-child(1) .card {
+    // Image courtesy Hisu Lee (https://unsplash.com/@lee_hisu)
+    background-image: url("https://images.unsplash.com/photo-1444412667101-4eccfdeeff07?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=");
+  }
+  
+  &:nth-child(2) .card {
+    // Image courtesy Roya Ann Miller (https://unsplash.com/@royaannmiller)
+    background-image: url("https://images.unsplash.com/photo-1516817153573-7b617832a471?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&h=1000&q=80");
+  }
+  
+  &:nth-child(3) .card {
+    // Image courtesy Chris Lawton (https://unsplash.com/@chrislawton)
+    background-image: url("https://images.unsplash.com/photo-1485973088077-6e9a977f8617?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+  }
+
+  &:nth-child(4) .card {
+    // Image courtesy Clarke Sanders (https://unsplash.com/@clar_san)
+    background-image: url("https://images.unsplash.com/photo-1493655161922-ef98929de9d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+  }
+}
+
+// - Passion -
+.passion:before {
+  $overlay-color: hsla(240, 74%, 45%, 0.3);
+  $from-color: hsla(267, 95%, 58%, 0.2);
+  $to-color: hsla(310, 100%, 59%, 0.8);
+  $white: hsla(0, 100%, 100%, 0.8);
+  $shadow-color: hsla(267, 95%, 58%, 0.8);
+
+  $gradient-angle: 165deg;
+  $overlay-gradient: linear-gradient($gradient-angle, $from-color, $to-color);
+  $overlay-splotch: radial-gradient(ellipse 30vw 20vh at 10% 5%, $white, transparent);
+  background-color: $overlay-color;
+  background-image: $overlay-gradient,
+    $overlay-splotch;
+  mix-blend-mode: lighten;
+  box-shadow: inset 0 0 5vw $shadow-color;
+}
+
+// - Timeless -
+.timeless:before {
+  $overlay-color: hsla(240, 74%, 45%, 0.3);
+  $from-color: hsla(44, 29%, 61%, 0.2);
+  $to-color: hsla(45, 25%, 50%, 0.8);
+  $white: hsla(0, 100%, 100%, 0.8);
+  $shadow-color: hsla(40, 1%, 48%, 0.8);
+
+  $gradient-angle: 165deg;
+  $overlay-gradient: linear-gradient($gradient-angle, $from-color, $to-color);
+  $radial-gradient: radial-gradient(ellipse 30vw 20vh at 10% 5%, $white, transparent);
+  background-color: $overlay-color;
+  background-image: $overlay-gradient, $radial-gradient;
+  mix-blend-mode: color;
+  box-shadow: inset 0 0 5vw $shadow-color;
+}
+
+// - Pop -
+.pop:before {
+  $overlay-color: hsla(128, 100%, 50%, 0.3);
+  $from-color: hsla(108, 100%, 50%, 0.2);
+  $to-color: hsla(139, 100%, 50%, 0.8);
+  $white: hsla(0, 100%, 100%, 0.8);
+
+  $gradient-angle: 165deg;
+  $overlay-gradient: linear-gradient($gradient-angle, $from-color, $to-color);
+  $radial-gradient: radial-gradient(ellipse 30vw 20vh at 10% 5%, $white, transparent);
+  background-color: $overlay-color;
+  background-image: $overlay-gradient, $radial-gradient;
+  mix-blend-mode: saturation;
+}
+
+// - Survival -
+.survival:before {
+  $overlay-color: hsla(128, 100%, 50%, 0.3);
+  $from-color: hsla(28, 100%, 50%, 0.4);
+  $to-color: hsla(0, 100%, 50%, 0.8);
+  $white: hsla(0, 100%, 100%, 0.8);
+
+  $gradient-angle: 165deg;
+  $overlay-gradient: linear-gradient($gradient-angle, $from-color, $to-color);
+  $radial-gradient: radial-gradient(ellipse 30vw 20vh at 10% 5%, $white, transparent);
+  background-color: $overlay-color;
+  background-image: $overlay-gradient, $radial-gradient;
+  mix-blend-mode: overlay;
+}
+
+// - Breathe -
+.breathe:before {
+  $overlay-color: hsla(128, 100%, 50%, 0.3);
+  $from: hsla(246, 100%, 50%, 0.4);
+  $to: hsla(208, 100%, 50%, 1);
+  $white: hsla(0, 100%, 100%, 0.8);
+
+  $overlay-gradient: radial-gradient(ellipse farthest-corner at 50% 50%, $from, $to);
+  $second-gradient: radial-gradient(ellipse 30vw 20vh at 10% 5%, $white, transparent);
+  background-color: $overlay-color;
+  background-image: $overlay-gradient, $second-gradient;
+  mix-blend-mode: screen;
+}
+
+// - Fortune -
+.fortune:before {
+  $overlay-highlight: hsla(39, 100%, 40%, 0.5);
+  $overlay-shadow: hsla(39, 100%, 70%, 0.8);
+
+  $overlay-gradient: radial-gradient(ellipse 100% 100% at 0% 0%, $overlay-highlight 0%, $overlay-shadow 70%, $overlay-highlight 100%);
+  background-image: $overlay-gradient;
+  mix-blend-mode: screen;
+}
+
+// - Mist -
+.mist:before {
+  $overlay-highlight: hsla(172, 100%, 50%, 0.5);
+  $overlay-color: hsla(190, 100%, 70%, 0.2);
+
+  $top-left-gradient: radial-gradient(ellipse 100% 100% at 0% 0%, $overlay-highlight 0%, transparent 70%);
+  $bottom-right-gradient: radial-gradient(ellipse 100% 100% at 100% 100%, $overlay-highlight 0%, transparent 50%);
+  background-color: $overlay-color;
+  background-image: $top-left-gradient, $bottom-right-gradient;
+  mix-blend-mode: screen;
+}
+
+// - Pride -
+.pride:before {
+  $red: hsla(0, 100%, 50%, 0.5);
+  $orange: hsla(60, 100%, 50%, 0.5);
+  $yellow: hsla(120, 100%, 50%, 0.5);
+  $green: hsla(180, 100%, 50%, 0.5);
+  $blue: hsla(240, 100%, 50%, 0.5);
+  $indigo: hsla(300, 100%, 50%, 0.5);
+  $violet: hsla(360, 100%, 50%, 0.5);
+
+  $gradient-angle: 40deg;
+  $rainbow: linear-gradient($gradient-angle, $red, $orange, $yellow, $green, $blue, $indigo, $violet);
+  background-image: $rainbow;
+  mix-blend-mode: color;
+}
+
+// - Rise -
+.rise:before {
+  $sun: hsla(60, 100%, 70%, 0.5);
+  $rise: hsla(10, 100%, 50%, 0.3);
+  $overlay-color: hsla(190, 100%, 70%, 0.2);
+
+  $gradient-angle: 180deg;
+  $top-gradient: linear-gradient($gradient-angle, $rise, transparent);
+  $bottom-gradient: radial-gradient(ellipse 120% 100% at 50% 90%, $sun 0%, transparent 50%);
+  background-color: $overlay-color;
+  background-image: $top-gradient, $bottom-gradient;
+  mix-blend-mode: lighten;
+}
+
+// - Focus -
+.focus:before {
+  $from-color: hsla(45, 25%, 50%, 0);
+  $to-color: hsla(0, 0%, 0%, 1);
+
+  $gradient-angle: 165deg;
+  $radial-gradient: radial-gradient(ellipse closest-corner at 50% 50%, $from-color, $to-color 70%);
+  background-image: $radial-gradient;
+  mix-blend-mode: saturation;
+}
+
+// - Retro -
+.retro {
+  filter: sepia(0.4);
+}
+.retro:before {
+  $light-leak: hsla(60, 30%, 70%, 0.5);
+  $sepia: hsla(10, 30%, 50%, 0.3);
+  $overlay-color: hsla(190, 50%, 70%, 0.2);
+  $silver: hsla(0, 50%, 50%, 0.4);
+
+  $gradient-angle: 140deg;
+  $top-gradient: linear-gradient($gradient-angle, $sepia, transparent);
+  $bottom-gradient: radial-gradient(ellipse 70% 20% at 50% 100%, $light-leak, transparent);
+  $left-gradient: radial-gradient(ellipse 10% 90% at 0% 50%, $light-leak, transparent);
+  $right-gradient: radial-gradient(ellipse 20% 90% at 100% 50%, $light-leak, transparent);
+  background-color: $overlay-color;
+  background-image: $top-gradient, $left-gradient, $right-gradient, $bottom-gradient;
+  mix-blend-mode: lighten;
+}
+
+
+
+
+// Everything from here on out sets up the Pen.
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #222;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 30vw;
+  width: 440vw;
+  margin: 1vw 0;
+}
+
+.card {
+  box-sizing: border-box;
+  position: relative;
+  width: 40vw;
+  height: 30vw;
+  margin: 0 1vw;
+  padding: 1vw;
+  overflow: hidden;
+  font-size: 3vh;
+  font-weight: bold;
+  color: #eee;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0.5vw 0.5vw 1.5vw hsla(0, 0%, 0%, 0.5);
+  text-shadow: 0.2vw 0.2vw 0.2vw hsla(0, 0%, 0%, 0.5);
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0vh;
+    right: 0;
+    bottom: 0vh;
+    left: 0;
+  }
+}
