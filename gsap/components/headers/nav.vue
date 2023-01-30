@@ -2,17 +2,16 @@
     <header class="fixed w-full z-50">
         <nav class=" flex flex-col w-full" aria-label="Top">
             <!-- Top navigation -->
-            <div class="bg-gray-900 w-full  px-4">
+            <div class="bg-blood w-full  px-4">
                 <div class="flex h-10  mx-auto max-w-7xl items-center justify-between ">
                     <!-- Currency selector -->
                     <form>
                         <div>
                             <label for="desktop-currency" class="sr-only">Currency</label>
-                            <div
-                                class="group relative -ml-2 rounded-md border-transparent bg-gray-900 focus-within:ring-2 focus-within:ring-white">
+                            <div class="group relative -ml-2 border-transparent">
                                 <select id="desktop-currency" name="currency"
-                                    class="flex items-center rounded-md border-transparent bg-gray-900 bg-none py-0.5 pl-2 pr-5 text-sm font-medium text-white focus:border-transparent focus:outline-none focus:ring-0 group-hover:text-gray-100">
-                                    <option v-for="currency in currencies" :key="currency">{{ currency }}
+                                    class="flex items-center rounded-md border-transparent bg-inherit bg-none py-0.5 pl-2 pr-5 text-sm font-medium text-white focus:border-transparent focus:outline-none focus:ring-0 group-hover:text-gray-100">
+                                    <option v-for="lang in languages" :key="lang">{{ lang }}
                                     </option>
                                 </select>
                                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center">
@@ -23,38 +22,38 @@
                     </form>
 
                     <div class="flex items-center space-x-6">
-                        <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Sign in</a>
-                        <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Create an
-                            account</a>
+                        <a href="#" class="text-sm font-medium text-white hover:text-gray-100">CONTACT NOW:</a>
+                        <a href="#" class="text-sm font-medium text-white hover:text-gray-100">+964 770 198 3581</a>
                     </div>
                 </div>
             </div>
 
             <!-- Secondary navigation -->
-            <div class="bg-white w-full bg-opacity-10 backdrop-blur-md backdrop-filter  px-4">
-                <div class="mx-auto max-w-7xl">
+            <div class="bg-zinc-900 global w-full bg-opacity-20 backdrop-blur-md backdrop-filter ">
+                <div class="mx-auto max-w-full">
                     <div>
                         <div class="flex h-16 items-center justify-between">
                             <!-- Logo (lg+) -->
                             <div class="hidden lg:flex lg:flex-1 lg:items-center">
                                 <a href="#">
                                     <span class="sr-only">Your Company</span>
-                                    <img class="h-16 w-auto" src="~/assets/img/logos.svg" alt="" />
+                                    <img class="h-16 w-auto" src="~/assets/img/logos.2.svg" alt="" />
                                 </a>
                             </div>
 
-                            <div class="hidden h-full lg:flex">
+                            <div class="hidden h-full -ml-24 px-16 lg:flex">
                                 <!-- Flyout menus -->
-                                <PopoverGroup class="inset-x-0 bottom-0 px-4">
-                                    <div class="flex h-full justify-center space-x-8">
+                                <PopoverGroup class="inset-x-0 bottom-0 ">
+                                    <div class="flex h-full justify-center space-x-10">
                                         <Popover v-for="category in navigation.categories" :key="category.name"
                                             class="flex" v-slot="{ open }">
-                                            <div class="relative flex">
+                                            <div
+                                                class="relative flex justify-center items-center nav-item hover:text-zinc-900 w-20">
                                                 <PopoverButton
-                                                    class="relative z-10 flex items-center justify-center text-sm font-medium text-white transition-colors duration-200 ease-out">
+                                                    class="relative nav-link w-full z-10 flex items-center justify-center transition-colors duration-200 ease-out">
                                                     {{ category.name }}
                                                     <span
-                                                        :class="[open ? 'bg-white' : '', 'absolute inset-x-0 -bottom-px h-0.5 transition duration-200 ease-out']"
+                                                        :class="[open ? 'bg-white' : '', 'absolute inset-x-0 -bottom-px transition duration-200 ease-out']"
                                                         aria-hidden="true" />
                                                 </PopoverButton>
                                             </div>
@@ -93,11 +92,12 @@
                                                 </PopoverPanel>
                                             </transition>
                                         </Popover>
-
-                                        <a v-for="page in navigation.pages" :key="page.name" :href="page.href"
-                                            class="flex items-center text-sm font-medium text-white">{{
+                                        <div v-for="page in navigation.pages" :key="page.name"
+                                            class="relative flex justify-center items-center nav-item hover:text-zinc-900 w-20">
+                                            <a :href="page.href" class="">{{
                                                 page.name
                                             }}</a>
+                                        </div>
                                     </div>
                                 </PopoverGroup>
                             </div>
@@ -123,28 +123,7 @@
                                     class="h-8 w-auto" />
                             </a>
 
-                            <div class="flex flex-1 items-center justify-end">
-                                <a href="#" class="hidden text-sm font-medium text-white lg:block">Search</a>
 
-                                <div class="flex items-center lg:ml-8">
-                                    <!-- Help -->
-                                    <a href="#" class="p-2 text-white lg:hidden">
-                                        <span class="sr-only">Help</span>
-                                        <QuestionMarkCircleIcon class="h-6 w-6" aria-hidden="true" />
-                                    </a>
-                                    <a href="#" class="hidden text-sm font-medium text-white lg:block">Help</a>
-
-                                    <!-- Cart -->
-                                    <div class="ml-4 flow-root lg:ml-8">
-                                        <a href="#" class="group -m-2 flex items-center p-2">
-                                            <ShoppingBagIcon class="h-6 w-6 flex-shrink-0 text-white"
-                                                aria-hidden="true" />
-                                            <span class="ml-2 text-sm font-medium text-white">0</span>
-                                            <span class="sr-only">items in cart, view bag</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -177,7 +156,7 @@ import {
     XMarkIcon,
 } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
-const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
+const languages = ['EN', 'AR', 'KU', 'FA', 'TU']
 const navigation = {
     categories: [
         {

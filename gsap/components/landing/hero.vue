@@ -16,22 +16,33 @@ module.exports = {
 <template>
     <!-- Hero section -->
     <div class="w-full h-full relative bg-gray-900">
+
         <!-- Decorative image and overlay -->
         <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
-            <img src="/img/section-img-05.jpg" alt="" class="h-full w-full object-cover object-center" />
+            <img src="/img/section-hero.jpeg" alt="" class="h-full w-full object-cover object-center" />
         </div>
-        <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50" />
+        <!-- <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50" /> -->
 
 
-
-        <div class="relative mx-auto flex max-w-3xl flex-col items-center py-32 px-6 text-center sm:py-64 lg:px-0">
-            <h1 class="text-4xl font-bold tracking-tight text-white lg:text-6xl">New arrivals are here</h1>
-            <p class="mt-4 text-xl text-white">The new arrivals have, well, newly arrived. Check out the latest
-                options from our summer small-batch release while they're still in stock.</p>
-            <a href="#"
-                class="mt-8 inline-block rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100">Shop
-                New Arrivals</a>
+        <div class="max-w-7xl m-16 grid grid-cols-2">
+            <div class="relative col-span-1 py-32 sm:py-64 lg:px-0">
+                <h1 class="text-4xl font-montserrat font-thin tracking-tight text-blood lg:text-6xl">New arrivals
+                    are here
+                </h1>
+                <p class="mt-4 text-left font-extralight text-sm font-montserrat text-zinc-800">The new arrivals have,
+                    well,
+                    newly
+                    arrived. Check
+                    out the
+                    latest
+                    options from our summer small-batch release while they're still in stock.</p>
+                <a href="#"
+                    class="mt-8 inline-block rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100">Shop
+                    New Arrivals</a>
+            </div>
         </div>
+        <span class="hscroll-line wow fadeIn z-50 w-2 bg-transparent" data-wow-delay="0.8s"
+            style="visibility: visible; animation-delay: 0.8s; animation-name: fadeIn;"></span>
     </div>
 </template>
 

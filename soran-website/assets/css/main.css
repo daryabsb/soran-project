@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 .nav-item {
-  position: relative;
-  display: block;
-  cursor: pointer;
-  padding: 8px 0px;
-  text-decoration: none;
-  color: #ae0d00;
 }
 .nav-item:hover {
   color: #fff;
