@@ -71,7 +71,9 @@ onUnmounted(() => {
         <section class="panel orange">
             <LandingAbout />
         </section>
-        <section class="panel purple">THREE</section>
+        <section class="panel purple">
+            <LandingGolden />
+        </section>
         <section class="panel green">FOUR</section>
     </main>
 

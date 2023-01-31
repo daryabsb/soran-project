@@ -2,11 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-*::selection {
-  background: #f4493286;
+@font-face {
+  font-family: "Roboto";
+  src: url("https://golin.com/wp-content/themes/golin/_fonts/Roboto-Light.eot");
+  src: url("https://golin.com/wp-content/themes/golin/_fonts/Roboto-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://golin.com/wp-content/themes/golin/_fonts/Roboto-Light.woff2")
+      format("woff2"),
+    url("https://golin.com/wp-content/themes/golin/_fonts/Roboto-Light.woff")
+      format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("https://golin.com/wp-content/themes/golin/_fonts/Gotham-Light.eot");
+  src: url("https://golin.com/wp-content/themes/golin/_fonts/Gotham-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://golin.com/wp-content/themes/golin/_fonts/Gotham-Light.woff")
+      format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("https://golin.com/wp-content/themes/golin/_fonts/Gotham-Bold.eot");
+  src: url("https://golin.com/wp-content/themes/golin/_fonts/Gotham-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://golin.com/wp-content/themes/golin/_fonts/Gotham-Bold.woff")
+      format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "RobotoSlab";
+  src: url("https://golin.com/wp-content/themes/golin/_fonts/RobotoSlab-Bold.ttf");
+  font-weight: 700;
+}
+
+::-moz-selection {
+  background: #f4b432;
   color: #231f21;
 }
 
+::selection {
+  background: #f4b432;
+  color: #231f21;
+}
+
+::-moz-selection {
+  background: #f4b432;
+  color: #231f21;
+}
+
+@-webkit-keyframes drawline {
+  0% {
+    -webkit-transform: translate3d(0, -200%, 0);
+    transform: translate3d(0, -200%, 0);
+    opacity: 1;
+  }
+
+  60% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes drawline {
+  0% {
+    -webkit-transform: translate3d(0, -200%, 0);
+    transform: translate3d(0, -200%, 0);
+    opacity: 1;
+  }
+
+  60% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes pause-between-iterations {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pause-between-iterations {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* SCROLL LINE */
 .hscroll-line {
   bottom: 80px;
   left: 50%;

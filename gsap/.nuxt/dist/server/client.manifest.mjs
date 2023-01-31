@@ -1,1 +1,1 @@
-export { default } from "file:///C:/api/soran-project/gsap/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
+export { default } from "file:///E:/api/soran-project/gsap/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"

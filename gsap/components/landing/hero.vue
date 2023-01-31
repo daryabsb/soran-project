@@ -19,26 +19,25 @@ module.exports = {
 
         <!-- Decorative image and overlay -->
         <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
-            <img src="/img/section-hero.jpeg" alt="" class="h-full w-full object-cover object-center" />
+            <img src="/img/hero-section-0001.jpg" alt="" class="h-full w-full object-cover object-center" />
         </div>
         <!-- <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50" /> -->
 
 
         <div class="max-w-7xl m-16 grid grid-cols-2">
-            <div class="relative col-span-1 py-32 sm:py-64 lg:px-0">
+            <div class=".full-screen-block__inner relative col-span-1 py-16 sm:py-32 lg:px-0">
                 <h1 class="text-4xl font-montserrat font-thin tracking-tight text-blood lg:text-6xl">New arrivals
                     are here
                 </h1>
-                <p class="mt-4 text-left font-extralight text-sm font-montserrat text-zinc-800">The new arrivals have,
+                <p class="mt-4  font-extralight text-sm font-montserrat text-zinc-800">The new arrivals have,
                     well,
                     newly
                     arrived. Check
                     out the
                     latest
                     options from our summer small-batch release while they're still in stock.</p>
-                <a href="#"
-                    class="mt-8 inline-block rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100">Shop
-                    New Arrivals</a>
+                <a href="https://golin.com/work/" class="underline ">See More</a>
+
             </div>
         </div>
         <span class="hscroll-line wow fadeIn z-50 w-2 bg-transparent" data-wow-delay="0.8s"

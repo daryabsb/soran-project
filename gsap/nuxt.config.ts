@@ -17,7 +17,11 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ["~/assets/styles.css", "~/assets/css/main.css"],
+  css: [
+    "~/assets/styles.css",
+    "~/assets/css/main.css",
+    "~/assets/css/underline.css",
+  ],
   build: {
     transpile: ["gsap"],
   },
