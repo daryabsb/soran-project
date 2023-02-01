@@ -32,7 +32,7 @@ onMounted(() => {
         panels.forEach((panel, i) => {
             ScrollTrigger.create({
                 trigger: panel,
-                start: 'left right',
+                start: 'top bottom',
                 end: '+=200%',
                 onToggle: (self) =>
                     self.isActive && !scrollTween.value && goToSection(i),
