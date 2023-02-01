@@ -3,7 +3,7 @@
         <nav class=" flex flex-col w-full" aria-label="Top">
             <!-- Top navigation -->
             <div class="bg-blood w-full  px-4">
-                <div class="flex h-10  mx-auto max-w-7xl items-center justify-between ">
+                <div class="flex h-6  mx-auto max-w-7xl items-center justify-between ">
                     <!-- Currency selector -->
                     <form>
                         <div>
@@ -29,15 +29,17 @@
             </div>
 
             <!-- Secondary navigation -->
-            <div class="bg-zinc-900 global w-full bg-opacity-20 backdrop-blur-md backdrop-filter ">
+            <div class="bg-blood global w-full bg-opacity-20 backdrop-blur-md backdrop-filter ">
                 <div class="mx-auto max-w-full">
                     <div>
                         <div class="flex h-16 items-center justify-between">
                             <!-- Logo (lg+) -->
                             <div class="hidden lg:flex lg:flex-1 lg:items-center">
-                                <a href="#">
+                                <a href="#" class="flex items-center font-3xl">
                                     <span class="sr-only">Your Company</span>
-                                    <img class="h-16 w-auto" src="~/assets/img/logos.2.svg" alt="" />
+                                    <img class="h-16 w-auto drop-shadow-2xl" src="~/assets/img/logos.svg" alt="" />
+                                    <h1 class="font-bold uppercase font-mono text-blood drop-shadow-xl text-4xl">Logos
+                                    </h1>
                                 </a>
                             </div>
 
@@ -49,7 +51,7 @@
                                             class="flex  link-3" v-slot="{ open }">
                                             <div class="relative flex justify-center items-center  w-20">
                                                 <PopoverButton
-                                                    class="relative   w-full z-10 flex items-center justify-center transition-colors duration-200 ease-out">
+                                                    class="relative drop-shadow-md w-full z-10 flex items-center justify-center transition-colors duration-200 ease-out">
                                                     {{ category.name }}
                                                     <span
                                                         :class="[open ? 'bg-white' : '', 'absolute inset-x-0 -bottom-px transition duration-200 ease-out']"
@@ -258,7 +260,7 @@ const mobileMenuOpen = ref(false)
 }
 
 #nav-3 {
-    background: #EEA200;
+    background: rgb(174 13 0 / var(--tw-bg-opacity));
 }
 
 .link-1 {
@@ -305,7 +307,7 @@ const mobileMenuOpen = ref(false)
 
 .link-3:hover {
     background-color: #ffffff;
-    color: #EEA200;
+    color: rgb(174 13 0);
     padding: 24px 10px;
 }
 </style>

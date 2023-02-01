@@ -61,20 +61,28 @@ onUnmounted(() => {
                 <p>Use pinning to layer panels on top of each other as you scroll.</p>
             </div>
         </section> -->
-        <section class="panel dark">
+        <section class="panel">
             <LandingHero />
-            <div class="flex flex-col justify-center items-center scroll-down animate-bounce">
+            <!-- <div class="flex flex-col justify-center items-center scroll-down animate-bounce">
                 <span>Scroll Down</span>
                 <ArrowDownIcon class="h-8 w-8" />
-            </div>
+            </div> -->
         </section>
-        <section class="panel orange">
+        <section class="panel">
             <LandingAbout />
         </section>
-        <section class="panel purple">
-            <LandingGolden />
+        <section class="panel">
+            <LandingTem />
         </section>
-        <section class="panel green">FOUR</section>
+        <section class="panel">
+            <LandingFetures />
+        </section>
+        <section class="panel">
+            <LandingInsights />
+        </section>
+        <section class="panel">
+            <LandingContact />
+        </section>
     </main>
 
 </template>
