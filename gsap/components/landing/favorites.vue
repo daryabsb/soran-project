@@ -1,5 +1,5 @@
 <template>
-    <div class="relative overflow-hidden rounded-lg">
+    <div class="relative overflow-hidden rounded-lg w-full h-full ">
         <div class="absolute inset-0">
             <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-01.jpg" alt=""
                 class="h-full w-full object-cover object-center" />

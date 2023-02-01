@@ -6,10 +6,10 @@
     "module": true,
     "resourceType": "script"
   },
-  "C:/api/soran-project/gsap/node_modules/nuxt/dist/app/entry.mjs": {
+  "E:/api/soran-project/gsap/node_modules/nuxt/dist/app/entry.mjs": {
     "resourceType": "script",
     "module": true,
     "isEntry": true,
-    "file": "C:/api/soran-project/gsap/node_modules/nuxt/dist/app/entry.mjs"
+    "file": "E:/api/soran-project/gsap/node_modules/nuxt/dist/app/entry.mjs"
   }
 }

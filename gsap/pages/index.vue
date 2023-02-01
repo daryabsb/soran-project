@@ -18,7 +18,7 @@ const goToSection = (i) => {
     ctx.value.add(() => {
         scrollTween.value = gsap.to(window, {
             scrollTo: { y: i * window.innerHeight, autoKill: false },
-            duration: 1,
+            duration: .5,
             id: 'scrollTween',
             onComplete: () => (scrollTween.value = null),
             overwrite: true,
@@ -63,10 +63,7 @@ onUnmounted(() => {
         </section> -->
         <section class="panel">
             <LandingHero />
-            <!-- <div class="flex flex-col justify-center items-center scroll-down animate-bounce">
-                <span>Scroll Down</span>
-                <ArrowDownIcon class="h-8 w-8" />
-            </div> -->
+
         </section>
         <section class="panel">
             <LandingAbout />

@@ -426,7 +426,7 @@
   font-weight: 600;
   font-size: 1.5em;
   text-align: center;
-  /* color: white; */
+  color: white;
   position: relative;
   box-sizing: border-box;
 }

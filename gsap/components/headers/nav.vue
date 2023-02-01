@@ -74,9 +74,9 @@
                                                                 <div v-for="item in category.featured" :key="item.name"
                                                                     class="group relative">
                                                                     <div
-                                                                        class="aspect-w-1 aspect-h-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
+                                                                        class="aspect-w-1 aspect-h-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75 h-full">
                                                                         <img :src="item.imageSrc" :alt="item.imageAlt"
-                                                                            class="object-cover object-center" />
+                                                                            class="h-full object-cover object-center" />
                                                                     </div>
                                                                     <a :href="item.href"
                                                                         class="mt-4 block font-medium text-gray-900">
@@ -84,7 +84,7 @@
                                                                             aria-hidden="true" />
                                                                         {{ item.name }}
                                                                     </a>
-                                                                    <p aria-hidden="true" class="mt-1">Shop now
+                                                                    <p aria-hidden="true" class="mt-1">Contact now
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -161,18 +161,18 @@ const languages = ['EN', 'AR', 'KU', 'FA', 'TU']
 const navigation = {
     categories: [
         {
-            name: 'Women',
+            name: 'Services',
             featured: [
                 {
-                    name: 'New Arrivals',
+                    name: 'Publications',
                     href: '#',
-                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
+                    imageSrc: '/img/nav-publications.jpg',
                     imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
                 },
                 {
-                    name: 'Basic Tees',
+                    name: 'Graphic Design',
                     href: '#',
-                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
+                    imageSrc: '/img/nav-graphic.jpg',
                     imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
                 },
                 {
@@ -190,18 +190,18 @@ const navigation = {
             ],
         },
         {
-            name: 'Men',
+            name: 'Extra',
             featured: [
                 {
-                    name: 'New Arrivals',
+                    name: 'Event management',
                     href: '#',
-                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
+                    imageSrc: '/img/nav-Event.jpg',
                     imageAlt: 'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
                 },
                 {
-                    name: 'Basic Tees',
+                    name: 'Conference',
                     href: '#',
-                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg',
+                    imageSrc: '/img/nav-Conference.jpg',
                     imageAlt: 'Model wearing light heather gray t-shirt.',
                 },
                 {

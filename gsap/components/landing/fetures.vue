@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white py-16 sm:py-20 w-full h-full grid grid-cols-2">
+    <div class="bg-white py-16 sm:py-20 w-full h-screen grid grid-cols-2 overflow-hidden">
         <div class="col-span-1">
 
             <div class="relative overflow-hidden pt-12 mb-12">
@@ -35,7 +35,7 @@
             </div>
             <div class="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
                 <dl
-                    class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+                    class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
                     <div v-for="feature in features" :key="feature.name" class="relative pl-9">
                         <dt class="inline font-semibold text-gray-900">
                             <component :is="feature.icon" class="absolute top-1 left-1 h-5 w-5 text-indigo-600"
@@ -72,25 +72,7 @@ const features = [
         description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
         icon: LockClosedIcon,
     },
-    {
-        name: 'Simple queues.',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
-        icon: ArrowPathIcon,
-    },
-    {
-        name: 'Advanced security.',
-        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-        icon: FingerPrintIcon,
-    },
-    {
-        name: 'Powerful API.',
-        description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-        icon: Cog6ToothIcon,
-    },
-    {
-        name: 'Database backups.',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
-        icon: ServerIcon,
-    },
+
+
 ]
 </script>

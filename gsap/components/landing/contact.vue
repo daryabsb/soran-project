@@ -13,7 +13,7 @@ module.exports = {
 ```
 -->
 <template>
-    <div class="bg-gray-100 w-full h-full pt-12">
+    <div class="bg-gray-100 w-full h-screen pt-12">
         <div class="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
             <div class="relative bg-white shadow-xl">
                 <h2 class="sr-only">Contact us</h2>
