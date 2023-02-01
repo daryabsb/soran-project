@@ -423,15 +423,17 @@ strong {
   }
 }
 ::-moz-selection {
-  background: #f4b432;
+  background: #e41717;
   color: #231f21;
 }
+
 ::selection {
-  background: #f4b432;
+  background: #e60e0e;
   color: #231f21;
 }
+
 ::-moz-selection {
-  background: #f4b432;
+  background: #e41e1e;
   color: #231f21;
 }
 body,

@@ -2,7 +2,7 @@
     <header class="fixed w-full z-50">
         <nav class=" flex flex-col w-full" aria-label="Top">
             <!-- Top navigation -->
-            <div class="bg-blood w-full  px-4">
+            <div class="bg-white w-full  px-4">
                 <div class="flex h-6  mx-auto max-w-7xl items-center justify-between ">
                     <!-- Currency selector -->
                     <form>
@@ -29,17 +29,17 @@
             </div>
 
             <!-- Secondary navigation -->
-            <div class="bg-blood global w-full bg-opacity-20 backdrop-blur-md backdrop-filter ">
+            <div class="bg-white global w-full bg-opacity-20 backdrop-blur-md backdrop-filter ">
                 <div class="mx-auto max-w-full">
                     <div>
                         <div class="flex h-16 items-center justify-between">
                             <!-- Logo (lg+) -->
-                            <div class="hidden lg:flex lg:flex-1 lg:items-center">
+                            <div class="hidden pl-16 lg:flex lg:flex-1 lg:items-center">
                                 <a href="#" class="flex items-center font-3xl">
                                     <span class="sr-only">Your Company</span>
-                                    <img class="h-16 w-auto drop-shadow-2xl" src="~/assets/img/logos.svg" alt="" />
-                                    <h1 class="font-bold uppercase font-mono text-blood drop-shadow-xl text-4xl">Logos
-                                    </h1>
+                                    <img class="h-8 w-auto drop-shadow-2xl" src="~/assets/img/logos3-blood.svg"
+                                        alt="" />
+
                                 </a>
                             </div>
 
