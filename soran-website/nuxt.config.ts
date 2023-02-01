@@ -18,7 +18,14 @@ export default defineNuxtConfig({
     },
   },
   plugins: [{ src: "~/plugins/aos", mode: "client" }],
-  css: ["~/assets/css/main.css"],
+  css: [
+    "~/assets/css/main.css",
+    "~/assets/css/panel.css",
+    "~/assets/css/underline.css",
+  ],
+  build: {
+    transpile: ["gsap"],
+  },
   postcss: {
     plugins: {
       tailwindcss: {},

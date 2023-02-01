@@ -1,54 +1,36 @@
 <template>
-    <slide class="">
-        <div class=" -mt-12 lg:grid lg:grid-cols-12 lg:gap-8 p-6 z-10">
-            <div class="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
-                <h1>
-                    <span
-                        class="block text-base font-montserrat font-semibold text-gray-500 sm:text-lg lg:text-base xl:text-lg">Coming
-                        soon</span>
-                    <span class="mt-1 block text-4xl tracking-tight sm:text-5xl xl:text-6xl">
-                        <span class="block text-gray-900">Data to enrich your</span>
-                        <span class="block font-normal text-blood">online business</span>
-                    </span>
-                </h1>
-                <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                    lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                    fugiat aliqua ad ad non deserunt sunt.
-                </p>
-                <div class="mt-8 sm:mx-auto sm:max-w-lg sm:text-center lg:mx-0 lg:text-left">
-                    <p class="text-base font-medium text-gray-900">
-                        Sign up to get notified when it’s ready.
-                    </p>
-                    <form action="#" method="POST" class="mt-3 sm:flex">
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" name="email" id="email"
-                            class="block w-full rounded-md border-gray-300 py-3 text-base placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:flex-1"
-                            placeholder="Enter your email" />
-                        <button type="submit"
-                            class="mt-3 w-full border border-transparent bg-zinc-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center">
-                            Notify me
-                        </button>
-                    </form>
+    <div class="relative bg-white h-full w-full">
+        <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+            <div class="px-6 pt-10 pb-24 sm:pb-32 lg:col-span-7 lg:px-0 lg:pt-48 lg:pb-56 xl:col-span-6">
+                <div class="mx-auto max-w-2xl lg:mx-0">
+                    <img class="h-11" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&amp;shade=600"
+                        alt="Your Company" />
+                    <div class="hidden sm:mt-32 sm:flex lg:mt-16">
+                        <div
+                            class="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                            Anim aute id magna aliqua ad ad non deserunt sunt. <a href="#"
+                                class="whitespace-nowrap font-semibold text-blood"><span class="absolute inset-0"
+                                    aria-hidden="true" />Read more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                    <h1 class="mt-24 text-4xl font-bold tracking-tight text-gray-900 sm:mt-10 sm:text-6xl">Data to
+                        enrich your online business</h1>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt.
+                        Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+                    <div class="mt-10 flex items-center gap-x-6">
+                        <a href="#"
+                            class="rounded-md bg-blood px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
+                            started</a>
+                        <a href="#" class="text-base font-semibold leading-7 text-gray-900">Learn more <span
+                                aria-hidden="true">→</span></a>
+                    </div>
                 </div>
             </div>
-            <div
-                class="relative mt-12 sm:mx-auto sm:max-w-lg lg:col-span-6 lg:mx-0 lg:mt-0 lg:flex lg:max-w-none lg:items-center">
-                <div class="block lg:hidden relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
-                    <button type="button"
-                        class="relative block w-full overflow-hidden rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                        <span class="sr-only">Watch our video to learn more</span>
-                        <img class="w-full" src="/img/section-img-02.jpg" alt="" />
-                    </button>
-                </div>
+            <div class="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
+                <img class="aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
+                    src="https://images.unsplash.com/photo-1498758536662-35b82cd15e29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
+                    alt="" />
             </div>
         </div>
-        <div class="hidden lg:block absolute top-0">
-            <img src="/img/section-img-02.jpg" alt="" class="h-screen w-screen object-cover" />
-        </div>
-    </slide>
+    </div>
 </template>
-<script setup>
-import slide from '~/components/Paralax/slide.vue';
-
-</script>

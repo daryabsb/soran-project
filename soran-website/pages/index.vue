@@ -1,25 +1,89 @@
-<template>
-    <div class="relative ">
-        <!-- <GradientUnit /> -->
-        <ParalaxParallax>
-            <template #nav>
-                <!-- <template v-slot:nav="{ navigate, currentSlideNumber }"> -->
-                <!-- <div class="fixed px-6 lg:px-8 bg-white bg-opacity-70 z-50 w-full"> -->
-                <!-- <MainHeader :active="currentSlideNumber + 1" @updateNav="navigate" /> -->
-                <!-- <HeadersNav :active="currentSlideNumber + 1" @updateNav="navigate" /> -->
-                <HeadersHeader />
+<script setup>
+import { onUnmounted, ref, watch } from 'vue';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-            </template>
-            <template #sections>
-                <LandingHero id="section-1" />
-                <LandingFetures id="section-2" />
-                <LandingCreative id="section-3" />
-                <LandingTeam id="section-4" />
-                <LandingNewsletter id="section-5" />
-            </template>
-        </ParalaxParallax>
+import { useTransitionComposable } from '../composables/transition-composable';
+import transitionConfig from '../helpers/transitionConfig';
+
+definePageMeta({
+    pageTransition: transitionConfig,
+});
+
+const { transitionState } = useTransitionComposable();
+const main = ref(),
+    ctx = ref(),
+    scrollTween = ref();
+
+const goToSection = (i) => {
+    // Remove the GSAP instance with the specific ID
+    // to prevent memory leak
+    ctx.value.data.forEach((e) => {
+        if (e.vars && e.vars.id === 'scrollTween') {
+            e.kill();
+        }
+    });
+    ctx.value.add(() => {
+        scrollTween.value = gsap.to(window, {
+            scrollTo: { y: i * window.innerHeight, autoKill: false },
+            duration: 1,
+            id: 'scrollTween',
+            onComplete: () => (scrollTween.value = null),
+            overwrite: true,
+        });
+    });
+};
+
+watch(
+    () => transitionState.transitionComplete,
+    (newValue) => {
+        if (newValue) {
+            ctx.value = gsap.context((self) => {
+                const panels = self.selector('.panel');
+                panels.forEach((panel, i) => {
+                    ScrollTrigger.create({
+                        trigger: panel,
+                        start: 'top bottom',
+                        end: '+=200%',
+                        onToggle: (self) =>
+                            self.isActive && !scrollTween.value && goToSection(i),
+                    });
+                });
+                ScrollTrigger.create({
+                    start: 0,
+                    end: 'max',
+                    snap: 1 / (panels.length - 1),
+                });
+            }, main.value); // <- Scope!
+        }
+    }
+);
+
+onUnmounted(() => {
+    ctx.value.revert(); // <- Easy Cleanup!
+});
+</script>
+
+<template>
+    <div ref="main">
+        <section class=" panel ">
+
+            <LandingHero />
+        </section>
+        <section class="panel">
+            <LandingAbout />
+        </section>
+        <section class="panel">
+            <LandingTeam />
+        </section>
+        <!-- <section class="panel">
+            <LandingFetures />
+        </section> -->
+        <section class="panel">
+            <LandingInsights />
+        </section>
+        <section class="panel">
+            <LandingContact />
+        </section>
     </div>
 </template>
-<script setup>
-
-</script>

@@ -1,109 +1,212 @@
-<!-- This example requires Tailwind CSS v3.0+ -->
 <template>
-    <div class="isolate bg-white  w-screen">
-        <div class="absolute inset-x-0  transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
-            <svg class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
-                viewBox="0 0 1155 678" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)" fill-opacity=".3"
-                    d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z" />
-                <defs>
-                    <linearGradient id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533" x1="1155.49" x2="-78.208" y1=".177"
-                        y2="474.645" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#9089FC" />
-                        <stop offset="1" stop-color="#FF80B5" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        </div>
-        <div class="px-6 lg:px-8">
-            <div>
-                <nav class="flex h-full items-center justify-between" aria-label="Global">
-                    <div class="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-                        <a href="#" class="">
-                            <span class="sr-only">Your Company</span>
-                            <img class="h-12" src="../../assets/img/logo.svg" alt="" />
-                        </a>
-                    </div>
-                    <div class="flex lg:hidden">
-                        <button type="button"
-                            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                            @click="mobileMenuOpen = true">
-                            <span class="sr-only">Open main menu</span>
-                            <Bars3Icon class="h-6 w-6" aria-hidden="true" />
-                        </button>
-                    </div>
-                    <div class="hidden h-full lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:items-center ">
-                        <div v-for="item in navigation" :key="item.id"
-                            :class="[active == item.id
-                            ? 'bg-white text-zinc-900'
-                            : 'bg-transparent ',
-                            'transition-all nav-link h-full py-2 flex justify-center items-center w-24 bg-opacity-75 hover:bg-blood ']"
-                            @click="$emit('updateNav', item.id)">
-                            <a :href="item.href" class="nav-item mx-auto font-semibold leading-7  text-blood">{{
-                                item.name
-                            }}</a>
-                        </div>
-                    </div>
+    <header class="fixed w-full z-50">
+        <nav class=" flex flex-col w-full" aria-label="Top">
+            <!-- Top navigation -->
+            <div class="bg-white h-4 w-full  px-4" />
 
-                </nav>
-                <Dialog as="div" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-                    <DialogPanel focus="true" class="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
-                        <div class="flex h-9 items-center justify-between">
-                            <div class="flex">
-                                <a href="#" class="-m-1.5 p-1.5">
+
+
+            <!-- Secondary navigation -->
+            <div class="bg-white global w-full bg-opacity-20 backdrop-blur-md backdrop-filter ">
+                <div class="mx-auto max-w-full">
+                    <div>
+                        <div class="flex h-16 items-center justify-between">
+                            <!-- Logo (lg+) -->
+                            <div class="hidden pl-16 lg:flex lg:flex-1 lg:items-center">
+                                <a href="#" class="flex items-center font-3xl">
                                     <span class="sr-only">Your Company</span>
-                                    <img class="h-8"
-                                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                                    <img class="h-8 w-auto drop-shadow-2xl" src="~/assets/img/logos3-blood.svg"
+                                        alt="" />
+
                                 </a>
                             </div>
-                            <div class="flex">
-                                <button type="button"
-                                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                                    @click="mobileMenuOpen = false">
-                                    <span class="sr-only">Close menu</span>
-                                    <XMarkIcon class="h-6 w-6" aria-hidden="true" />
-                                </button>
-                            </div>
-                        </div>
-                        <div class="mt-6 flow-root">
-                            <div class="-my-6 divide-y divide-gray-500/10">
-                                <div class="space-y-2 py-6">
-                                    <a v-for="item in navigation" :key="item.name" :href="item.href"
-                                        class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">{{
-    item.name
-                                        }}</a>
-                                </div>
-                                <div class="py-6">
-                                    <a href="#" class="-mx-3 block rounded-lg py-2.5 px-3 text-base 
-                                        font-semibold leading-6 text-gray-900 hover:bg-gray-400/10">Log
-                                        in</a>
-                                </div>
-                            </div>
-                        </div>
-                    </DialogPanel>
-                </Dialog>
-            </div>
-        </div>
 
-    </div>
+                            <div class="hidden h-full -ml-24 px-16 lg:flex">
+                                <!-- Flyout menus -->
+                                <PopoverGroup class="inset-x-0 bottom-0 px-4">
+                                    <div class="flex h-full justify-center space-x-8">
+                                        <Popover v-for="category in navigation.categories" :key="category.name"
+                                            class="flex" v-slot="{ open }">
+                                            <div class="relative flex">
+                                                <PopoverButton
+                                                    :class="[open ? 'border-blood text-blood' : ' border-transparent text-gray-700 hover:text-gray-800', 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out']">
+                                                    {{ category.name }}</PopoverButton>
+                                            </div>
+
+                                            <transition enter-active-class="transition ease-out duration-200"
+                                                enter-from-class="opacity-0" enter-to-class="opacity-100"
+                                                leave-active-class="transition ease-in duration-150"
+                                                leave-from-class="opacity-100" leave-to-class="opacity-0">
+                                                <PopoverPanel class="absolute inset-x-0 top-full text-sm text-gray-500">
+                                                    <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
+                                                    <div class="absolute inset-0 top-1/2 bg-white "
+                                                        aria-hidden="true" />
+
+                                                    <div class="relative bg-white">
+                                                        <div class="mx-auto max-w-7xl px-8">
+                                                            <div class="grid grid-cols-4 gap-y-10 gap-x-8 py-16">
+                                                                <div v-for="item in category.featured" :key="item.name"
+                                                                    class="group relative">
+                                                                    <div
+                                                                        class="aspect-w-1 aspect-h-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
+                                                                        <img :src="item.imageSrc" :alt="item.imageAlt"
+                                                                            class="object-cover object-center" />
+                                                                    </div>
+                                                                    <a :href="item.href"
+                                                                        class="mt-4 block font-medium text-gray-900">
+                                                                        <span class="absolute inset-0 z-10"
+                                                                            aria-hidden="true" />
+                                                                        {{ item.name }}
+                                                                    </a>
+                                                                    <p aria-hidden="true" class="mt-1">Shop now</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </PopoverPanel>
+                                            </transition>
+                                        </Popover>
+
+
+                                    </div>
+                                </PopoverGroup>
+                            </div>
+
+                            <!-- Mobile menu and search (lg-) -->
+                            <div class="flex flex-1 items-center lg:hidden">
+                                <button type="button" class="-ml-2 p-2 text-white" @click="mobileMenuOpen = true">
+                                    <span class="sr-only">Open menu</span>
+                                    <Bars3Icon class="h-6 w-6" aria-hidden="true" />
+                                </button>
+
+                                <!-- Search -->
+                                <a href="#" class="ml-2 p-2 text-white">
+                                    <span class="sr-only">Search</span>
+                                    <MagnifyingGlassIcon class="h-6 w-6" aria-hidden="true" />
+                                </a>
+                            </div>
+
+                            <!-- Logo (lg-) -->
+                            <a href="#" class="lg:hidden">
+                                <span class="sr-only">Your Company</span>
+                                <img src="https://tailwindui.com/img/logos/mark.svg?color=white" alt=""
+                                    class="h-8 w-auto" />
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { Dialog, DialogPanel } from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-defineProps({
-    active: { type: Number, default: 1 }
-})
-defineEmits(['updateNav'])
-const navigation = [
-    { id: 1, name: 'Home', href: '#section-1' },
-    { id: 2, name: 'Features', href: '#section-2' },
-    { id: 3, name: 'Creative', href: '#section-3' },
-    { id: 4, name: 'Team', href: '#section-4' },
-    { id: 5, name: 'Newsletter', href: '#section-4' },
-]
+import {
+    Dialog,
+    DialogPanel,
+    Popover,
+    PopoverButton,
+    PopoverGroup,
+    PopoverPanel,
+    Tab,
+    TabGroup,
+    TabList,
+    TabPanel,
+    TabPanels,
+    TransitionChild,
+    TransitionRoot,
+} from '@headlessui/vue'
+import {
+    Bars3Icon,
+    MagnifyingGlassIcon,
+    QuestionMarkCircleIcon,
+    ShoppingBagIcon,
+    XMarkIcon,
+} from '@heroicons/vue/24/outline'
+import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+const languages = ['EN', 'AR', 'KU', 'FA', 'TU']
+const navigation = {
+    categories: [
+        {
+            name: 'Services',
+            featured: [
+                {
+                    name: 'Publications',
+                    href: '#',
+                    imageSrc: '/img/nav-publications.jpg',
+                    imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
+                },
+                {
+                    name: 'Graphic Design',
+                    href: '#',
+                    imageSrc: '/img/nav-graphic.jpg',
+                    imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+                },
+                {
+                    name: 'Accessories',
+                    href: '#',
+                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg',
+                    imageAlt: 'Model wearing minimalist watch with black wristband and white watch face.',
+                },
+                {
+                    name: 'Carry',
+                    href: '#',
+                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg',
+                    imageAlt: 'Model opening tan leather long wallet with credit card pockets and cash pouch.',
+                },
+            ],
+        },
+        {
+            name: 'Extra',
+            featured: [
+                {
+                    name: 'Event management',
+                    href: '#',
+                    imageSrc: '/img/nav-Event.jpg',
+                    imageAlt: 'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
+                },
+                {
+                    name: 'Conference',
+                    href: '#',
+                    imageSrc: '/img/nav-Conference.jpg',
+                    imageAlt: 'Model wearing light heather gray t-shirt.',
+                },
+                {
+                    name: 'Accessories',
+                    href: '#',
+                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg',
+                    imageAlt:
+                        'Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body.',
+                },
+                {
+                    name: 'Carry',
+                    href: '#',
+                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg',
+                    imageAlt: 'Model putting folded cash into slim card holder olive leather wallet with hand stitching.',
+                },
+            ],
+        },
+        {
+            name: 'About',
+        },
+        {
+            name: 'Contact',
+        },
+    ],
+    pages: [
+        { name: 'Company', href: '#' },
+        { name: 'Stores', href: '#' },
+    ],
+}
+
+
 
 
 const mobileMenuOpen = ref(false)
 </script>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+</style>
