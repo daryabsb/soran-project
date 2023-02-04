@@ -13,7 +13,12 @@
       format("woff");
   font-weight: 300;
 }
-
+/* @import url(https://fonts.googleapis.com/css?family=Montserrat); */
+@font-face {
+  font-family: "Montserrat";
+  src: url("https://fonts.googleapis.com/css?family=Montserrat");
+  font-weight: 400;
+}
 @font-face {
   font-family: "Gotham";
   src: url("https://golin.com/wp-content/themes/golin/_fonts/Gotham-Light.eot");
