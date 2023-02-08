@@ -5,7 +5,8 @@
                 <component :is="item.component" />
             </div>
             <div class="carousel-dot-wrapper">
-                <div class="carousel-dot" v-for="(item, index) in components" :key="index" ref="carouselDots" />
+                <div class="carousel-dot" v-for="(item, index) in components" :key="index" ref="carouselDots"
+                    @click="prevSlide" />
             </div>
 
         </div>
@@ -44,7 +45,11 @@ const state = reactive({
     numberOfTargets: 0,
     repeatDelay: 0,
 });
-useCarousel({ carouselItems, carouselDots }, state)
+const { targets,
+    nextSlide,
+    prevSlide,
+    slideTo,
+    startAuto, } = useCarousel({ carouselItems, carouselDots }, state)
 onMounted(() => {
 })
 

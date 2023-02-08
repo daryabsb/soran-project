@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import vueper from './vueper.vue';
 const main = ref();
 const ctx = ref();
 const scrollTween = ref();
@@ -63,7 +63,12 @@ onUnmounted(() => {
                 </div>
             </div>
         </section>
-        <section class="panel red">ONE</section>
+        <section class="panel ">
+            <div class="h-full w-full flex flex-col justify-center items center">
+                <vueper />
+
+            </div>
+        </section>
         <section class="panel orange">TWO</section>
         <section class="panel purple">THREE</section>
         <section class="panel green">FOUR</section>
