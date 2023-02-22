@@ -21,7 +21,10 @@ export default defineNuxtConfig({
   build: {
     transpile: ["gsap"],
   },
-  plugins: [{ src: "~/plugins/aos", mode: "client" }],
+  plugins: [
+    { src: "~/plugins/aos", mode: "client" },
+    { src: "~/plugins/vueper", mode: "client" },
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},

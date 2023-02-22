@@ -4,12 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --dark: #1d1d1d;
   --grey-dark: #414141;
@@ -74,44 +68,6 @@
 
 .panel.align-top {
   align-items: flex-start;
-}
-
-.panel h1 {
-  font-size: 1.8em;
-  color: white;
-  font-weight: 300;
-  margin: 0 auto;
-}
-
-.panel.description {
-  padding-bottom: 60px;
-}
-
-.panel p,
-.panel li {
-  color: black;
-  font-weight: 400;
-  text-align: left;
-  font-size: 0.8em;
-  line-height: 1.5em;
-  margin: 0.3em 0 1em 0;
-}
-
-.panel p strong,
-.panel li strong {
-  color: white;
-  font-weight: 400;
-}
-
-.panel p code,
-.panel li code {
-  background-color: rgba(255, 255, 255, 0.15);
-  padding: 2px 4px;
-  border-radius: 5px;
-}
-
-.panel li {
-  margin: 0;
 }
 
 .gray {
@@ -496,14 +452,14 @@
   text-decoration: none;
 } */
 
-html,
+/* html,
 body {
   margin: 0;
   height: 100vh;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
   font-family: "Signika Negative", sans-serif, Arial;
-}
+} */
 
 .panel {
   width: 100%;
@@ -600,13 +556,13 @@ header {
   background-size: contain;
 }
 
-html,
+/* html,
 body {
   height: auto;
   background-color: var(--dark);
   color: var(--light);
   font-family: "Signika Negative", sans-serif;
-}
+} */
 
 .header {
   width: 100%;

@@ -3,7 +3,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import vueper from './vueper.vue';
+
 
 const main = ref();
 const ctx = ref();
